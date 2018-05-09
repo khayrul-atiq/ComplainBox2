@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#263238"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+
+
+    <TextView
+        android:id="@+id/application_form_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:lines="1"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        />
+
+
+
+</LinearLayout>

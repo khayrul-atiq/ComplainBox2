@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.olife.complainbox2.ApplicationForm">
+
+
+    <ListView
+        android:id="@+id/application_form_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="5dp"
+        android:layout_marginTop="@dimen/notice_ic_text_space"
+        android:divider="#ffffff">
+    </ListView>
+
+
+</RelativeLayout>
