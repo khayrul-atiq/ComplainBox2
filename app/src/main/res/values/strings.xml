@@ -55,8 +55,6 @@
     <string name="application_form_uploaded_date_tag">applicationFormUploadedDate</string>
 
 
-
-
     <string name="problem_url">/android/receiveProblem.php</string>
     <string name="problem_title">problem_title</string>
     <string name="background_image">background_image</string>
@@ -70,7 +68,6 @@
     <string name="problem_category_Corruption">Corruption</string>
     <string name="problem_category_Repair">Repair</string>
     <string name="problem_category_Others">Others</string>
-
 
 
 </resources>
