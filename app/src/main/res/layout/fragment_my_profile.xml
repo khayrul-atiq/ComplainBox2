@@ -37,20 +37,20 @@
 
     </android.support.design.widget.TabLayout>
 
-    <!--
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPagerContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
--->
+<!--
     <LinearLayout
         android:id="@+id/viewPagerContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
     </LinearLayout>
-
+-->
 
 </LinearLayout>

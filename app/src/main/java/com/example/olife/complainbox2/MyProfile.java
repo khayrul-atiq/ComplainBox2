@@ -21,6 +21,10 @@ public class MyProfile extends Fragment {
 
     private int previousTab;
 
+    private static SectionsPagerAdapter sectionsPagerAdapter;
+
+    private static ViewPager viewPager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,23 +38,34 @@ public class MyProfile extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("My Profile");
 
-        replaceFragment(new ProfileInformation(),0);
+        sectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
+
+        TabLayout tabLayout = getActivity().findViewById(R.id.tabLayout);
+        viewPager = getActivity().findViewById(R.id.viewPagerContainer);
+        viewPager.setAdapter(sectionsPagerAdapter);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+
+
+
+        //replaceFragment(new ProfileInformation(),0);
 
 
         //ViewPager viewPager = getActivity().findViewById(R.id.viewPagerContainer);
         //setupViewPager(viewPager);
 
 
-        TabLayout tabLayout = getActivity().findViewById(R.id.tabLayout);
-        //tabLayout.setupWithViewPager(viewPager);
 
+        //tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                if(tab.getPosition()==0) replaceFragment(new ProfileInformation(),tab.getPosition());
-                else if (tab.getPosition()==1) replaceFragment(new ProfileAcivity(),tab.getPosition());
+                viewPager.setCurrentItem(tab.getPosition(),true);
+                //if(tab.getPosition()==0) replaceFragment(new ProfileInformation(),tab.getPosition());
+                //else if (tab.getPosition()==1) replaceFragment(new ProfileAcivity(),tab.getPosition());
 
             }
 
@@ -67,6 +82,28 @@ public class MyProfile extends Fragment {
 
     }
 
+
+    private class SectionsPagerAdapter extends FragmentPagerAdapter{
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            System.out.println(position);
+            if(position==0) return new ProfileInformation();
+            if(position==1) return new ProfileAcivity();
+            return new ProfileInformation();
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+    }
+
+/*
+
     private void replaceFragment(Fragment fragment, int currentTab) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -79,7 +116,6 @@ public class MyProfile extends Fragment {
         transaction.commit();
     }
 
-/*
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
         adapter.addFragment(new ProfileInformation(), "Profile");

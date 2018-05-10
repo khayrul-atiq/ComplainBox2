@@ -323,6 +323,7 @@ public class Submission extends AppCompatActivity implements
             protected Map<String, String> getParams() {
                 Map<String, String> MyData = new HashMap<String, String>();
                 MyData.put("image",imageToString());
+                MyData.put("name","hello");
                 MyData.put("category","problem");//Add the data you'd like to send to the server.
                 MyData.put("problemDescription",problemDescription);
                 MyData.put("latitude",Double.toString(latitude));
