@@ -9,26 +9,16 @@ import java.io.Serializable;
 public class NoticeInformation implements Serializable{
 
 
-    /*
-    *     private static final String TAG_NOTICE_ID = "noticeID";
-    private static final String TAG_NOTICE_TITLE = "noticeTitle";
-    private static final String TAG_NOTICE_FILE_NAME = "noticeFileName";
-    private static final String TAG_DATE = "data";
-    * */
-
-    private String notice_id,notice_title,notice_file_name,notice_date;
+    private String notice_title,notice_file_name,notice_date;
 
 
-    public NoticeInformation(String notice_id, String notice_title, String notice_file_name, String notice_date) {
-        this.notice_id = notice_id;
+    public NoticeInformation( String notice_title, String notice_file_name, String notice_date) {
+
         this.notice_title = notice_title;
         this.notice_file_name = notice_file_name;
         this.notice_date = notice_date;
     }
 
-    public String getNotice_id() {
-        return notice_id;
-    }
 
     public String getNotice_title() {
         return notice_title;

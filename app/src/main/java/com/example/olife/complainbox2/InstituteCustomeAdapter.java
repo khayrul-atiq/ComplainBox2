@@ -49,13 +49,15 @@ public class InstituteCustomeAdapter extends ArrayAdapter<InstituteInformation> 
     private final Context context;
     private ArrayList<InstituteInformation> values = new ArrayList<>();
     private double latitude,longitude;
+    private Integer color;
 
-    public InstituteCustomeAdapter(Context context, ArrayList<InstituteInformation> values,double latitude, double longitude) {
+    public InstituteCustomeAdapter(Context context, ArrayList<InstituteInformation> values,double latitude, double longitude,Integer color) {
         super(context, -1, values);
         this.context = context;
         this.values = values;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.color = color;
     }
 
     @Override
@@ -75,6 +77,9 @@ public class InstituteCustomeAdapter extends ArrayAdapter<InstituteInformation> 
 
         institute_name.setText(values.get(position).getInstituteName());
         institute_location.setText(values.get(position).getInstituteLocation());
+
+        convertView.setBackgroundColor(color);
+
         // change the icon for Windows and iPhone
 
         phone.setOnClickListener(new View.OnClickListener() {
@@ -90,11 +95,15 @@ public class InstituteCustomeAdapter extends ArrayAdapter<InstituteInformation> 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent;
+                if(latitude==0.0 && longitude==0.0){
+                    intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?q="+ values.get(position).getLatitude()  +"," + values.get(position).getLongitude() +"("+ values.get(position).getInstituteName() + ")&iwloc=A&hl=es"));
+                }
 
-
-                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                        Uri.parse("http://maps.google.com/maps?saddr="+latitude+","+longitude+"&daddr="+values.get(position).getLatitude()+","+values.get(position).getLongitude()));
-                context.startActivity(intent);
+                else{
+                    intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?saddr="+latitude+","+longitude+"&daddr="+values.get(position).getLatitude()+","+values.get(position).getLongitude()));
+                }
+               context.startActivity(intent);
 
 
             }

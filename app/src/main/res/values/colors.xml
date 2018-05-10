@@ -3,4 +3,10 @@
     <color name="colorPrimary">#009688</color>
     <color name="colorPrimaryDark">#00796B</color>
     <color name="colorAccent">#FF4081</color>
+
+
+
+    <color name="Hospital">#4CAF50</color>
+    <color name="Fire">#03A9F4</color>
+    <color name="Police">#FF9800</color>
 </resources>

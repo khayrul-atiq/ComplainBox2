@@ -125,7 +125,7 @@
                             android:layout_height="90dp"
                             android:src="@drawable/ic_local_hospital_black_24dp"
                             android:tint="#ffffff"
-                            app:cb_color="#4CAF50"
+                            app:cb_color="@color/Hospital"
                             app:cb_pressedRingWidth="8dp"
                             android:layout_gravity="center"/>
 
@@ -161,7 +161,7 @@
                             android:layout_height="90dp"
                             android:src="@drawable/ic_policeman_male"
                             android:tint="#ffffff"
-                            app:cb_color="#FF9800"
+                            app:cb_color="@color/Police"
                             app:cb_pressedRingWidth="8dp"
                             android:layout_gravity="center"/>
 
@@ -189,7 +189,7 @@
                             android:layout_height="90dp"
                             android:src="@drawable/ic_whatshot_black_24dp"
                             android:tint="#ffffff"
-                            app:cb_color="#03A9F4"
+                            app:cb_color="@color/Fire"
                             app:cb_pressedRingWidth="8dp"
                             android:layout_gravity="center"/>
 

@@ -10,14 +10,6 @@
     android:backgroundTint="#E0F2F1"
     tools:context="com.example.olife.complainbox2.Submission">
 
-    <!--
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark" />  -->
 
     <ImageView
         android:id="@+id/problem_submission_image"
@@ -29,7 +21,6 @@
         android:onClick="captureProblemPhoto"
         android:clickable="true"
         android:src="@drawable/ic_menu_camera"
-
         android:layout_gravity="center" />
 
 

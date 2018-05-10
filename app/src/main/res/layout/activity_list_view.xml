@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.olife.complainbox2.Hospital">
+    tools:context="com.example.olife.complainbox2.Institute">
 
 
     <ListView
@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="5dp"
+        android:layout_marginTop="@dimen/notice_ic_text_space"
         android:divider="#ffffff">
     </ListView>
 

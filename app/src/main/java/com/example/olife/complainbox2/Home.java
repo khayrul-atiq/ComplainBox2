@@ -1,6 +1,8 @@
 package com.example.olife.complainbox2;
 
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Toast;
 
 
 import at.markushi.ui.CircleButton;
@@ -31,6 +33,10 @@ public class Home extends Fragment {
         return root;
     }
 
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null;
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -59,12 +65,18 @@ public class Home extends Fragment {
         circleButton_application_form.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.currentItem = 5;
-                MainActivity.navigationView.setCheckedItem(R.id.nav_application_form);
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
-                ft.replace(R.id.content_frame, new ApplicationForm());
-                ft.commit();
+
+                if(isNetworkConnected()){
+
+                    MainActivity.currentItem = 5;
+                    MainActivity.navigationView.setCheckedItem(R.id.nav_application_form);
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+                    ft.replace(R.id.content_frame, new ApplicationForm());
+                    ft.commit();
+                }
+                else{
+                    showNetworkErrorMessage();                }
             }
         });
 
@@ -83,24 +95,35 @@ public class Home extends Fragment {
         circleButton_notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.currentItem = 4;
-                MainActivity.navigationView.setCheckedItem(R.id.nav_notice);
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
-                ft.replace(R.id.content_frame, new Notice());
-                ft.commit();
+
+                if(isNetworkConnected()){
+                    MainActivity.currentItem = 4;
+                    MainActivity.navigationView.setCheckedItem(R.id.nav_notice);
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+                    ft.replace(R.id.content_frame, new Notice());
+                    ft.commit();
+                }
+                else{
+                    showNetworkErrorMessage();
+                }
             }
         });
 
         circleButton_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.currentItem = 3;
-                MainActivity.navigationView.setCheckedItem(R.id.nav_event);
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
-                ft.replace(R.id.content_frame, new Event());
-                ft.commit();
+                if(isNetworkConnected()){
+                    MainActivity.currentItem = 3;
+                    MainActivity.navigationView.setCheckedItem(R.id.nav_event);
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+                    ft.replace(R.id.content_frame, new Event());
+                    ft.commit();
+                }
+                else{
+                    showNetworkErrorMessage();
+                }
             }
         });
 
@@ -116,6 +139,10 @@ public class Home extends Fragment {
             }
         });
         
+    }
+
+    private void showNetworkErrorMessage(){
+        Toast.makeText(getActivity(),getResources().getString(R.string.network_error_message),Toast.LENGTH_SHORT).show();
     }
 
 }

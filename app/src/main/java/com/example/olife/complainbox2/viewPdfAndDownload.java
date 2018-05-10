@@ -27,7 +27,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class viewNoticePDF extends AppCompatActivity {
+public class viewPdfAndDownload extends AppCompatActivity {
 
     private static final int  MEGABYTE = 1024 * 1024;
     private NotificationManager mNotifyManager;
@@ -48,7 +48,6 @@ public class viewNoticePDF extends AppCompatActivity {
         title = extras.getString("title");
         file_url = extras.getString("selected_url");
         fileName = extras.getString("fileName");
-        Log.d("All Notices: ", file_url);
 
         setTitle(title);
 
@@ -58,14 +57,13 @@ public class viewNoticePDF extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        Toast.makeText(this,"back press",Toast.LENGTH_SHORT).show();
         onBackPressed();
         return true;
     }
 
     public void downloadRequest(){
         mNotifyManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        build = new NotificationCompat.Builder(viewNoticePDF.this);
+        build = new NotificationCompat.Builder(viewPdfAndDownload.this);
         build.setContentTitle("Download")
                 .setContentText("Download in progress")
                 .setSmallIcon(R.drawable.ic_arrow_downward_black_24dp);
@@ -166,9 +164,9 @@ public class viewNoticePDF extends AppCompatActivity {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
             build.setProgress(100, values[0], false);
             mNotifyManager.notify(id, build.build());
-            super.onProgressUpdate(values);
         }
 
         @Override
@@ -206,7 +204,7 @@ public class viewNoticePDF extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(viewNoticePDF.this);
+            pDialog = new ProgressDialog(viewPdfAndDownload.this);
             pDialog.setMessage("Loading notice. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);

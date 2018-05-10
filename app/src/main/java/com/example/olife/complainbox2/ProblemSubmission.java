@@ -43,8 +43,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Road Damage");
-                i.putExtra("background_image",R.drawable.ic_road_damage);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Road_Damage));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_road_damage);
 
 
                 startActivity(i);
@@ -56,8 +56,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Westage");
-                i.putExtra("background_image",R.drawable.ic_westage);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Westage));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_westage);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -67,8 +67,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Footpath");
-                i.putExtra("background_image",R.drawable.ic_footpath);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Footpath));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_footpath);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -78,8 +78,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Drainage");
-                i.putExtra("background_image",R.drawable.ic_drainage);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Drainage));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_drainage);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -89,8 +89,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Road Light");
-                i.putExtra("background_image",R.drawable.ic_road_light);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Road_Light));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_road_light);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -100,8 +100,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Mosquito");
-                i.putExtra("background_image",R.drawable.ic_mosquito);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Mosquito));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_mosquito);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -111,8 +111,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Illegal Parking");
-                i.putExtra("background_image",R.drawable.ic_illegal_parking);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Illegal_Parking));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_illegal_parking);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -122,8 +122,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Corruption");
-                i.putExtra("background_image",R.drawable.ic_corruption);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Illegal_Parking));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_corruption);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -133,8 +133,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Repair");
-                i.putExtra("background_image",R.drawable.ic_repair);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Repair));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_repair);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -144,8 +144,8 @@ public class ProblemSubmission extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Submission.class);
-                i.putExtra("message_title","Others");
-                i.putExtra("background_image",R.drawable.ic_other);
+                i.putExtra(getResources().getString(R.string.problem_title),getResources().getString(R.string.problem_category_Others));
+                i.putExtra(getResources().getString(R.string.background_image),R.drawable.ic_other);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }

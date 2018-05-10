@@ -1,6 +1,5 @@
 package com.example.olife.complainbox2;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +17,8 @@ public class EmergencySupport extends Fragment {
 
 
     private CircleButton circleButton_999, circleButton_hospital,circleButton_police_station,circleButton_fire_station;
+
+    private String institute_url ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,6 +38,8 @@ public class EmergencySupport extends Fragment {
         circleButton_fire_station = getActivity().findViewById(R.id.emergency_support_fire_station);
         circleButton_police_station = getActivity().findViewById(R.id.emergency_support_police_station);
 
+        institute_url = getResources().getString(R.string.complain_box_domain)+getResources().getString(R.string.institute_url);
+
 
         circleButton_999.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +52,9 @@ public class EmergencySupport extends Fragment {
         circleButton_hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Hospital.class);
-                i.putExtra("title","Hospital");
-                i.putExtra("url","http://10.100.104.78/android/getAllHospital.php");
+                Intent i = new Intent(getActivity(), Institute.class);
+                i.putExtra(getResources().getString(R.string.institute_title_key),getResources().getString(R.string.Hospital));
+                i.putExtra(getResources().getString(R.string.institute_url_key),institute_url);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -60,7 +63,9 @@ public class EmergencySupport extends Fragment {
         circleButton_police_station.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), PoliceStation.class);
+                Intent i = new Intent(getActivity(), Institute.class);
+                i.putExtra(getResources().getString(R.string.institute_title_key),getResources().getString(R.string.Police_station));
+                i.putExtra(getResources().getString(R.string.institute_url_key),institute_url);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }
@@ -69,7 +74,9 @@ public class EmergencySupport extends Fragment {
         circleButton_fire_station.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), FireStation.class);
+                Intent i = new Intent(getActivity(), Institute.class);
+                i.putExtra(getResources().getString(R.string.institute_title_key),getResources().getString(R.string.Fire_station));
+                i.putExtra(getResources().getString(R.string.institute_url_key),institute_url);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left);
             }

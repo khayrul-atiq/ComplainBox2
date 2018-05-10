@@ -7,7 +7,70 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">myprofile</string>
-    <string name="complain_box_domain">http://10.100.104.65/SERVER</string>
-    <string name="notice_path">/android/getNotice.php</string>
-    <string name="event_path">/android/getEvent.php</string>
+    <string name="complain_box_domain">http://10.100.104.78</string>
+
+
+    <string name="file_url">/SERVER/NoticePDF/</string>
+
+    <string name="network_error_message">Bad Network connection</string>
+
+    <string name="institute_url">/android/getAllInstitute.php</string>
+
+    <string name="Hospital">Hospital</string>
+    <string name="Police_station">Police station</string>
+    <string name="Fire_station">Fire station</string>
+
+    <string name="institute_title_key">institute_title</string>
+    <string name="institute_url_key">institute_url</string>
+
+    <string name="success_tag">success</string>
+    <string name="institutes_tag">institutes</string>
+    <string name="institute_name_tag">institutionName</string>
+    <string name="institute_location_tag">instituteLocation</string>
+    <string name="longitude_tag">longitude</string>
+    <string name="latitude_tag">latitude</string>
+    <string name="phone_tag">phone</string>
+
+    <string name="notice_url">/android/getAllNotice.php</string>
+    <string name="notices_tag">notices</string>
+    <string name="notice_title_tag">noticeTitle</string>
+    <string name="notice_file_name_tag">noticeFileName</string>
+    <string name="notice_date_tag">date</string>
+
+
+    <string name="event_url">/android/getAllEvent.php</string>
+    <string name="events_tag">events</string>
+    <string name="event_title_tag">eventTitle</string>
+    <string name="event_description_tag">eventDescription</string>
+    <string name="event_publishing_date_tag">eventPublishingDate</string>
+    <string name="event_date_time_tag">eventDateTime</string>
+
+
+    <string name="application_form_url">/android/getAllApplicationForm.php</string>
+    <string name="application_forms_tag">applicationForms</string>
+    <string name="application_form_title_tag">applicationFormTitle</string>
+    <string name="application_form_description_tag">applicationFormDescription</string>
+    <string name="application_form_file_name_tag">applicationFormFileName</string>
+    <string name="application_form_type_tag">applicationFormType</string>
+    <string name="application_form_uploaded_date_tag">applicationFormUploadedDate</string>
+
+
+
+
+    <string name="problem_url">/android/receiveProblem.php</string>
+    <string name="problem_title">problem_title</string>
+    <string name="background_image">background_image</string>
+    <string name="problem_category_Road_Damage">Road Damage</string>
+    <string name="problem_category_Westage">Westage</string>
+    <string name="problem_category_Footpath">Footpath</string>
+    <string name="problem_category_Drainage">Drainage</string>
+    <string name="problem_category_Road_Light">Road Light</string>
+    <string name="problem_category_Mosquito">Mosquito</string>
+    <string name="problem_category_Illegal_Parking">Illegal Parking</string>
+    <string name="problem_category_Corruption">Corruption</string>
+    <string name="problem_category_Repair">Repair</string>
+    <string name="problem_category_Others">Others</string>
+
+
+
 </resources>

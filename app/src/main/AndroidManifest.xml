@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.olife.complainbox2">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -27,11 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Hospital" />
-        <activity android:name=".PoliceStation" />
-        <activity android:name=".FireStation" />
+        <activity android:name=".Institute" />
         <activity android:name=".Submission"></activity>
-        <activity android:name=".viewNoticePDF"></activity>
+        <activity android:name=".viewPdfAndDownload"></activity>
     </application>
 
 </manifest>
