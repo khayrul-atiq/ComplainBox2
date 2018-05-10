@@ -70,4 +70,12 @@
     <string name="problem_category_Others">Others</string>
 
 
+    <string name="submitted_problem_url">/android/getAllSubmittedProblem.php</string>
+    <string name="problems_tag">problems</string>
+    <string name="problem_description_tag">problemDescription</string>
+    <string name="problem_category_tag">problemCategory</string>
+    <string name="problem_submission_date_tag">problemSubmissionDate</string>
+    <string name="problem_status_tag">problemStatus</string>
+
+
 </resources>

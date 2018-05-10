@@ -9,9 +9,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class ProfileInformation extends Fragment {
+
+
+    private String userName,userEmail;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -22,5 +27,23 @@ public class ProfileInformation extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        getUserInformation();
+
+        TextView name = getActivity().findViewById(R.id.user_name);
+        TextView email = getActivity().findViewById(R.id.user_email);
+
+        name.setText(name.getText()+userName);
+        email.setText(email.getText()+userEmail);
+
+    }
+
+
+    private void getUserInformation(){
+        userName = "anonymous";
+        userEmail = "anonymous@example.com";
+
+
+        // server connection
     }
 }

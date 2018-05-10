@@ -34,19 +34,52 @@ public class MyProfile extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("My Profile");
 
-        //replaceFragment(new ProfileInformation(),0);
+        replaceFragment(new ProfileInformation(),0);
 
 
-        ViewPager viewPager = getActivity().findViewById(R.id.viewPagerContainer);
-        setupViewPager(viewPager);
+        //ViewPager viewPager = getActivity().findViewById(R.id.viewPagerContainer);
+        //setupViewPager(viewPager);
 
 
         TabLayout tabLayout = getActivity().findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
+        //tabLayout.setupWithViewPager(viewPager);
+
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                if(tab.getPosition()==0) replaceFragment(new ProfileInformation(),tab.getPosition());
+                else if (tab.getPosition()==1) replaceFragment(new ProfileAcivity(),tab.getPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
 
+    private void replaceFragment(Fragment fragment, int currentTab) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
 
+        if(previousTab> currentTab) transaction.setCustomAnimations(R.anim.slide_from_left,R.anim.slide_to_right);
+        else transaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+
+        transaction.replace(R.id.viewPagerContainer, fragment);
+        previousTab = currentTab;
+        transaction.commit();
+    }
+
+/*
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
         adapter.addFragment(new ProfileInformation(), "Profile");
@@ -83,5 +116,7 @@ public class MyProfile extends Fragment {
             return mFragmentTitleList.get(position);
         }
     }
+
+*/
 
 }
